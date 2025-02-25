@@ -68,24 +68,30 @@ export default function Home() {
                 <CardContent>
                   <p>Informações sobre a localização e características do rio/córrego estudado.</p>
                   <Image
-                    src="/placeholder.svg?height=300&width=400"
+                    src="/foto_inicial_rio.jpeg"
                     alt="Mapa do rio"
                     width={400}
                     height={300}
-                    className="mt-4 rounded-lg"
+                    className="mt-4 rounded-lg mx-auto"
                   />
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle>Mapa Interativo</CardTitle>
+                  <CardTitle>Localização</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>Mapa interativo mostrando a localização do rio e pontos de interesse.</p>
-                  {/* Placeholder for an interactive map */}
-                  <div className="bg-gray-200 h-64 mt-4 rounded-lg flex items-center justify-center">
-                    Mapa Interativo
-                  </div>
+                  <p>Localização do rio e pontos de interesse.</p>
+                  {/* <div className="bg-gray-200 h-64 mt-4 rounded-lg flex items-center justify-center"> */}
+                    {/* Mapa Interativo
+                  </div> */}
+                  <Image
+                    src="/foto_local_coleta.png"
+                    alt="Mapa do rio"
+                    width={600}
+                    height={400}
+                    className="mt-4 rounded-lg mx-auto"
+                  />
                 </CardContent>
               </Card>
             </div>
