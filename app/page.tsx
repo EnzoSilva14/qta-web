@@ -68,24 +68,27 @@ export default function Home() {
                 <CardContent>
                   <p>Informações sobre a localização e características do rio/córrego estudado.</p>
                   <Image
-                    src="/placeholder.svg?height=300&width=400"
+                    src="/foto_inicial_rio.jpeg"
                     alt="Mapa do rio"
                     width={400}
                     height={300}
-                    className="mt-4 rounded-lg"
+                    className="mt-4 rounded-lg mx-auto"
                   />
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle>Mapa Interativo</CardTitle>
+                  <CardTitle>Localização</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>Mapa interativo mostrando a localização do rio e pontos de interesse.</p>
-                  {/* Placeholder for an interactive map */}
-                  <div className="bg-gray-200 h-64 mt-4 rounded-lg flex items-center justify-center">
-                    Mapa Interativo
-                  </div>
+                  <p>Localização do rio e pontos de interesse.</p>
+                  <Image
+                    src="/foto_local_coleta.png"
+                    alt="Mapa do rio"
+                    width={600}
+                    height={400}
+                    className="mt-4 rounded-lg mx-auto"
+                  />
                 </CardContent>
               </Card>
             </div>
@@ -102,7 +105,6 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>Gráfico histórico da qualidade da água ao longo dos anos.</p>
-                  {/* Placeholder for a historical chart */}
                   <div className="bg-gray-200 h-64 mt-4 rounded-lg flex items-center justify-center">
                     Gráfico Histórico
                   </div>
@@ -114,7 +116,6 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>Informações sobre o estado atual da qualidade da água no rio/córrego.</p>
-                  {/* Placeholder for current state information */}
                   <ul className="list-disc list-inside mt-4">
                     <li>pH: 7.2</li>
                     <li>Temperatura: 22°C</li>
@@ -150,6 +151,81 @@ export default function Home() {
                 <p className="mt-4">Cada parâmetro tem um peso específico e contribui para o cálculo final do IQA.</p>
               </CardContent>
             </Card>
+
+            {/* Ajuste das caixas e imagens */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 place-items-center">
+              {/* pH */}
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/ph.png"
+                  alt="pH"
+                  width={340}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">pH</p>
+              </div>
+
+              {/* DBO */}
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/dbo.png"
+                  alt="DBO"
+                  width={340}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">DBO</p>
+              </div>
+
+              {/* Temperatura */}
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/temperatura.png"
+                  alt="Temperatura"
+                  width={340}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">Temperatura</p>
+              </div>
+
+              {/* Nitrogênio */}
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/nitrogenio_total.png"
+                  alt="Nitrogênio Total"
+                  width={340}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">Nitrogênio</p>
+              </div>
+
+              {/* Fósforo */}
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/fosforo_total.png"
+                  alt="Fósforo Total"
+                  width={360}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">Fósforo</p>
+              </div>
+
+              {/* Coliformes */}
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/coliformes_fecais.png"
+                  alt="Coliformes Fecais"
+                  width={340}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">Coliformes</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -188,7 +264,6 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>Informações sobre o estado atual do saneamento na região do rio/córrego estudado.</p>
-                  {/* Placeholder for sanitation information */}
                   <ul className="list-disc list-inside mt-4">
                     <li>Cobertura de água tratada: 95%</li>
                     <li>Coleta de esgoto: 80%</li>
@@ -202,7 +277,6 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>Informações sobre obras de saneamento em andamento na sub-bacia.</p>
-                  {/* Placeholder for ongoing projects */}
                   <ul className="list-disc list-inside mt-4">
                     <li>Ampliação da rede de coleta de esgoto</li>
                     <li>Construção de nova estação de tratamento</li>
@@ -255,4 +329,3 @@ export default function Home() {
     </div>
   )
 }
-
