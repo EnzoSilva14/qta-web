@@ -1,0 +1,18 @@
+.header {
+  background: #1a73e8;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.header ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
