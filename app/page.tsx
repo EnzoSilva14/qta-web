@@ -122,7 +122,7 @@ export default function Home() {
         {/* Nova Seção: História do Rio Pinheiros - aparece primeiro */}
         <section id="historia" className="bg-gray-50 py-16">
           <div className="container mx-auto px-6">
-            <h3 className="text-2xl font-semibold mb-4">História do Rio Pinheiros</h3>
+            <h3 className="text-3xl font-semibold mb-8">História do Rio Pinheiros</h3>
             <div className="relative flex items-center justify-center bg-white shadow-md rounded-lg p-4 min-h-[500px] overflow-y-auto">
               {/* Botão para voltar */}
               <button
@@ -161,23 +161,8 @@ export default function Home() {
         {/* Demais seções */}
         <section id="contexto" className="py-16">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-semibold mb-8">Contexto do Rio em Estudo</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Localização e Características</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p>Informações sobre a localização e características do rio/córrego estudado.</p>
-                  <Image
-                    src="/foto_inicial_rio.jpeg"
-                    alt="Mapa do rio"
-                    width={400}
-                    height={300}
-                    className="mt-4 rounded-lg mx-auto"
-                  />
-                </CardContent>
-              </Card>
+            <h2 className="text-3xl font-semibold mb-8">Mapa e Localização do Rio em Estudo</h2>
+            <div className="grid md:grid-cols-1 gap-8">
               <Card>
                 <CardHeader>
                   <CardTitle>Localização</CardTitle>
@@ -185,10 +170,10 @@ export default function Home() {
                 <CardContent>
                   <p>Localização do rio e pontos de interesse.</p>
                   <Image
-                    src="/foto_local_coleta.png"
+                    src="/rio_localizacao.png"
                     alt="Mapa do rio"
-                    width={600}
-                    height={400}
+                    width={800}
+                    height={600}
                     className="mt-4 rounded-lg mx-auto"
                   />
                 </CardContent>
@@ -314,6 +299,36 @@ export default function Home() {
                   className="object-contain"
                 />
                 <p className="mt-2 text-sm font-medium">Coliformes</p>
+              </div>
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/oxigenio_dissolvido.png"
+                  alt="Oxigênio Dissolvido"
+                  width={340}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">Oxigênio Dissolvido</p>
+              </div>
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/turbidez.png"
+                  alt="Turbidez"
+                  width={340}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">Turbidez</p>
+              </div>
+              <div className="bg-white shadow rounded-lg p-4 flex flex-col items-center w-[400px] h-[250px]">
+                <Image
+                  src="/residuos_totais.png"
+                  alt="Resíduos Totais"
+                  width={340}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm font-medium">Resíduos Totais</p>
               </div>
             </div>
           </div>
