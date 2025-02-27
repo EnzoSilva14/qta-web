@@ -1,4 +1,4 @@
-// File: /Users/cauedagostinho/Library/CloudStorage/OneDrive-Insper-InstitutodeEnsinoePesquisa/Documentos/Insper/5˚ sem/QTA/qta-web/app/layout.tsx
+// File: C:\dev\qta-web\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
