@@ -361,18 +361,36 @@ export default function Home() {
         <section id="saneamento" className="py-16">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-semibold mb-8">Saneamento na Região</h2>
+            <p className="mb-6 text-lg">
+              A infraestrutura de saneamento desempenha um papel fundamental na qualidade de vida da população.
+              Nesta seção, apresentamos os dados sobre a situação do saneamento na região estudada, bem como as
+              iniciativas em andamento para sua melhoria.
+            </p>
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardHeader>
                   <CardTitle>Situação Atual</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>Informações sobre o estado atual do saneamento na região do rio/córrego estudado.</p>
+                  <p>O contexto de saneamento na região onde se encontra o ponto de monitoramento é:</p>
                   <ul className="list-disc list-inside mt-4">
-                    <li>Cobertura de água tratada: 95%</li>
-                    <li>Coleta de esgoto: 80%</li>
-                    <li>Tratamento de esgoto: 60%</li>
+                    <li>Cobertura de água tratada: 99,3%</li>
+                    <li>Coleta de esgoto: 97,3%</li>
+                    <li>Tratamento de esgoto: 73,1%</li>
                   </ul>
+                  <p className="mt-4">
+                    Embora os índices sejam relativamente altos, o tratamento de esgoto ainda apresenta desafios,
+                    o que pode impactar a qualidade ambiental da região e a saúde pública.
+                  </p>
+                  <div className="mt-4">
+                    <Image
+                      src="/rio_2025.png"
+                      alt="Rio Pinheiros 2025"
+                      width={500}
+                      height={300}
+                      className="rounded-lg mx-auto h-[300px] object-cover"
+                    />
+                  </div>
                 </CardContent>
               </Card>
               <Card>
@@ -380,54 +398,103 @@ export default function Home() {
                   <CardTitle>Obras em Andamento</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>Informações sobre obras de saneamento em andamento na sub-bacia.</p>
+                  <p>Atualmente, as seguintes obras de saneamento estão em andamento na sub-bacia:</p>
                   <ul className="list-disc list-inside mt-4">
-                    <li>Ampliação da rede de coleta de esgoto</li>
-                    <li>Construção de nova estação de tratamento</li>
-                    <li>Revitalização de margens do rio</li>
+                    <li>Expansão da rede de esgoto em áreas de baixa cobertura</li>
+                    <li>Projetos de revitalização do Rio Pinheiros</li>
+                    <li>Melhoria da infraestrutura de estações de tratamento</li>
                   </ul>
+                  <p className="mt-4">
+                    Essas iniciativas visam não apenas aumentar a coleta e o tratamento de esgoto, mas também
+                    melhorar a qualidade da água e recuperar a biodiversidade local.
+                  </p>
+                  <div className="mt-4">
+                    <Image
+                      src="/obras_de_saneamento.png"
+                      alt="Obras de saneamento em andamento"
+                      width={500}
+                      height={300}
+                      className="rounded-lg mx-auto h-[300px] object-cover"
+                    />
+                  </div>
+
                 </CardContent>
               </Card>
             </div>
           </div>
+
         </section>
       </main>
 
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-6">
           <h3 className="text-xl font-semibold mb-4">Links Úteis</h3>
-          <ul className="space-y-2">
-            <li>
-              <a
-                href="http://www.tratabrasil.org.br"
-                className="hover:text-blue-400"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Trata Brasil
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.gov.br/ana/pt-br"
-                className="hover:text-blue-400"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Agência Nacional de Águas
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.sabesp.com.br/"
-                className="hover:text-blue-400"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                SABESP
-              </a>
-            </li>
-          </ul>
+          <div className="grid md:grid-cols-2 gap-4">
+            <ul className="list-disc list-inside mt-4">
+              <li>
+                <a
+                  href="http://www.tratabrasil.org.br"
+                  className="hover:text-blue-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Trata Brasil
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.gov.br/ana/pt-br"
+                  className="hover:text-blue-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Agência Nacional de Águas
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.sabesp.com.br/"
+                  className="hover:text-blue-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  SABESP
+                </a>
+              </li>
+            </ul>
+            <ul className="list-disc list-inside mt-4">
+              <li>
+                <a
+                  href="https://www.saneamentoambiental.com.br/noticias/projeto-novo-rio-pinheiros-ja-tratou-58-bilhoes-de-litros?utm_source=chatgpt.com"
+                  className="hover:text-blue-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Projeto Novo Rio Pinheiros
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.cetesb.sp.gov.br/"
+                  className="hover:text-blue-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CETESB - Companhia Ambiental do Estado de São Paulo
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.saopaulo.sp.gov.br/"
+                  className="hover:text-blue-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Governo do Estado de São Paulo - Projetos de Saneamento
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </footer>
     </div>
