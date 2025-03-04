@@ -761,10 +761,6 @@ video {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
 .-ml-4 {
   margin-left: -1rem;
 }
@@ -776,6 +772,9 @@ video {
 }
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .mb-8 {
   margin-bottom: 2rem;
@@ -810,8 +809,8 @@ video {
 .mt-auto {
   margin-top: auto;
 }
-.mb-6 {
-  margin-bottom: 1.5rem;
+.mt-1 {
+  margin-top: 0.25rem;
 }
 .block {
   display: block;
@@ -892,6 +891,9 @@ video {
 .h-\[250px\] {
   height: 250px;
 }
+.h-\[300px\] {
+  height: 300px;
+}
 .h-\[var\(--radix-navigation-menu-viewport-height\)\] {
   height: var(--radix-navigation-menu-viewport-height);
 }
@@ -910,8 +912,38 @@ video {
 .h-svh {
   height: 100svh;
 }
-.h-\[300px\] {
-  height: 300px;
+.h-32 {
+  height: 8rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.h-max {
+  height: max-content;
+}
+.h-\[400px\] {
+  height: 400px;
+}
+.h-\[280px\] {
+  height: 280px;
+}
+.h-\[5rem\] {
+  height: 5rem;
+}
+.h-\[10rem\] {
+  height: 10rem;
+}
+.h-\[15rem\] {
+  height: 15rem;
+}
+.h-\[20rem\] {
+  height: 20rem;
+}
+.h-\[25rem\] {
+  height: 25rem;
+}
+.h-\[auto\] {
+  height: auto;
 }
 .max-h-96 {
   max-height: 24rem;
@@ -1008,6 +1040,12 @@ video {
 }
 .w-px {
   width: 1px;
+}
+.w-\[500px\] {
+  width: 500px;
+}
+.w-\[px\] {
+  width: px;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1315,6 +1353,10 @@ video {
 }
 .border-transparent {
   border-color: transparent;
+}
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
 }
 .border-l-transparent {
   border-left-color: transparent;
@@ -1649,10 +1691,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
 }
 .underline-offset-4 {
   text-underline-offset: 4px;
@@ -2959,8 +2997,8 @@ body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:text-sm {
