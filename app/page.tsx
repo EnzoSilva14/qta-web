@@ -122,6 +122,11 @@ export default function Home() {
                 Saneamento
               </Link>
             </li>
+            <li>
+              <Link href="#laboratorios" className="text-gray-800 hover:text-blue-600">
+                Laboratórios
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>
@@ -279,37 +284,48 @@ export default function Home() {
                   <p>Essa abordagem permite uma avaliação mais completa e confiável da condição de um rio ou córrego, pois sintetiza diversas informações em um único número, que pode variar de 0 a 100.</p>
                 </CardContent>
                 <CardContent>
-                  <p>O IQA é calculado a partir de nove variáveis, cada uma com um peso específico (wiw_iwi) e um valor de qualidade (qiq_iqi), conforme a fórmula abaixo:</p>
-                  <div className="h-32 mt-4 rounded-lg flex items-center justify-center">
-                    <Image
-                      src="/formula_IQA.png"
-                      alt="Fórmula IQA"
-                      width={340}
-                      height={150}
-                      className="object-contain rounded-lg"
-                      />
+                  <p className="mb-2">
+                    O IQA é calculado a partir de nove variáveis, cada uma com um peso específico (<em>w<sub>i</sub></em>)
+                    e um valor de qualidade (<em>q<sub>i</sub></em>), conforme a fórmula abaixo:
+                  </p>
+
+                  {/* Fórmula em destaque */}
+                  <div className="bg-white p-4 rounded-lg flex flex-col items-center justify-center border shadow-sm">
+                    <p className="text-2xl font-bold">
+                      IQA ={" "}
+                      <span className="inline-block">
+                        ∏<sub>i=1 até n</sub> (q<sub>i</sub>)<sup>w<sub>i</sub></sup>
+                        {/* ∆˚µ˜∫√ç≈åßß∂ƒ©˙∆˚˚¬…æ‘“π */}
+                      </span>
+                    </p>
                   </div>
-                  <p>em que:</p>
-                  <div className="h-64 rounded-lg flex items-start justify-center flex-col space-y-4">
+
+                  <p className="mt-4">em que:</p>
+                  <div className="h-auto rounded-lg flex flex-col space-y-4 mt-2">
                     <div>
-                      <span className="font-bold whitespace-pre-line">IQA:</span>
-                      {" "}
+                      <span className="font-bold">IQA:</span>{" "}
                       <span>Índice de Qualidade das Águas, variando de 0 a 100.</span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">q_i:</span>
-                      {" "}
-                      <span>qualidade do i-ésimo parâmetro, também variando de 0 a 100, obtida por meio de uma “curva média de variação de qualidade”.</span>
+                      <span className="font-bold">q<sub>i</sub>:</span>{" "}
+                      <span>
+                        qualidade do i-ésimo parâmetro, também variando de 0 a 100, obtida por meio de uma
+                        “curva média de variação de qualidade”.
+                      </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">w_i:</span>
-                      {" "}
-                      <span>peso do i-ésimo parâmetro, um valor entre 0 e 1 que reflete a relevância desse parâmetro na determinação global da qualidade da água.</span>
+                      <span className="font-bold">w<sub>i</sub>:</span>{" "}
+                      <span>
+                        peso do i-ésimo parâmetro, um valor entre 0 e 1 que reflete a relevância desse
+                        parâmetro na determinação global da qualidade da água.
+                      </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">n:</span>
-                      {" "}
-                      <span>número de variáveis que entram no cálculo do IQA (para este estudo foram usados 9 parâmetros).</span>
+                      <span className="font-bold">n:</span>{" "}
+                      <span>
+                        número de variáveis que entram no cálculo do IQA (para este estudo foram usados
+                        9 parâmetros).
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -617,37 +633,6 @@ export default function Home() {
                 </CardContent>
               </Card>
             </div>
-
-            {/* Coliformes:
-Ao analisar os valores de coliformes fecais é possível notar uma certa constância ao longo de vários anos, com exceção ao período de 2016 e 2017 onde houve um aumento considerável dos valores medidos desse parâmetro. Esse aumento pode ser resultado de uma combinação de fatores. O primeiro deles é a Transição pós-crise hídrica, marcando um período de retomada dos investimentos em saneamento. Esse processo de ajuste e a recuperação dos sistemas podem ter gerado instabilidades pontuais, refletidas no aumento dos níveis de contaminação. No ano de 2017, a região enfrentou fortes períodos de chuva o que pode ter aumentado o escoamento superficial, arrastando resíduos e contaminantes das áreas urbanas para os corpos d’água.
-Além disso, no ano de 2024 e 2025 foi observado novamente altos valores desse parâmetro, inclusive muito superiores aos evidenciados nos anos de 2016 e 2017. Para o ano de 2024, os diversos eventos climáticos extremos podem ter sobrecarregado ou até prejudicado algumas infraestruturas de saneamento . Já para 2025, o alto valor obtido certamente indica uma poluição maior desses corpos d’água, porém um dos fatores que pode ter influenciado foi a data da coleta da amostra, que diferentemente dos demais anos, foi coletada no mês de fevereiro. 
-
-pH:
-Ao longo dos anos os valores de pH, apresentam grandes variações sem ser possível identificar ou correlacionar esses dados com algum acontecimento específico. Ainda assim, o valor obtido para o ano de 2025 foi bem abaixo dos demais anos. Esse valor pode possivelmente evidenciar uma maior poluição da região, o que resulta em chuvas mais acidas e consequentemente corpos d’água com pH menores. 
-
-DBO:
-Os valores de DBO também permaneceram estáveis ao longo dos anos, porém o valor obtido no ano de 2025 foi consideravelmente superior. Isso pode indicar que houve um aumento na descarga de esgoto e/ou resíduos orgânicos no rio. Outro possível fator também são os eventos climáticos extremos que sobrecarregaram o sistema de saneamento e aumentaram a quantidade de sedimentos acumulados. 
-
-Nitrogênio Total:
-Os valores apresentados de nitrogênio total sofrem grandes variações ao longo do extenso período analisado. O valor identificado para o ano de 2025 permanece dentro da variação padrão dos demais anos.
-
-Fósforo Total: 
-Assim como os valores de Nitrogênio total, os de Fósforo total apresentam grandes variações ao longo dos anos. O valor identificado para o ano de 2025 permanece dentro da variação padrão dos demais anos.
-
-Temperatura:	
-Dentre todas as curvas analisadas a de Temperatura é certamente a que apresenta menor variação. Ainda assim, o valor identificado em 2025 é bem superior aos demais anos em cerca de 8 ºC. Isso se deve ao momento da coleta que pode influenciar a grande diferença de valores, ou também ao aquecimento global que pode ter contribuído para uma medição superior.
-
-Turbidez:
-Os valores de turbidez sofrem pouca variação ao longo dos anos, por volta de 20 a 40,  com exceção ao ano de 2012 que foi constatado um valor extremamente alto. O valor obtido em 2025 foi um dos menores identificados em todo o período de estudo. 
-
-Resíduos Totais:
-Outro parâmetro que teve valores com pouca variação ao longo do período analisado foi o de Resíduos Totais. Os valores permaneceram por volta de 200 a 300 mg/L.
-
-Oxigênio Dissolvido:
-O parâmetro de oxigênio dissolvido apresentou nos anos de 2012 e 2013 valores extremamente altos, inclusive um deles apresentando mais de 100%, forte indicativo para uma medição incorreta ao se fazer a conversão de mg/L para valores percentuais. Essa conversão é importante pois, permite normalizar as variações impostas por condições ambientais como temperatura, pressão e altitude, possibilitando comparações mais precisas entre diferentes corpos d’água e períodos. Logo em seguida, nos anos subsequentes permaneceu mais estável, próximo de 15%. Porém, em 2025 obtivemos 81%. Esse aumento pode ter relação com a data da coleta, mudanças no regime de chuvas em relação aos demais períodos e também uma modificação nas estruturas de saneamento.
-A conversão de mg/L para valores percentuais foi feita usando um conversor online fornecido pela professora. */}
-
-                
           </div>
         </section>
 
@@ -740,6 +725,60 @@ A conversão de mg/L para valores percentuais foi feita usando um conversor onli
             </div>
           </div>
 
+        </section>
+        {/* Seção: Descrição dos Laboratórios */}
+        <section id="laboratorios" className="bg-white py-16">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-semibold mb-8">Descrição dos Laboratórios</h2>
+            <p className="text-lg mb-8">
+              Nesta seção, detalhamos os procedimentos realizados para a obtenção dos parâmetros essenciais que compõem o Índice de Qualidade das Águas (IQA). Cada laboratório foca em análises específicas, garantindo uma avaliação abrangente e precisa da qualidade dos corpos d’água estudados.
+            </p>
+            <div className="grid md:grid-cols-1 gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Lab 1 – Nitrogênio, Sólidos Totais e Turbidez</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <h3 className="text-xl font-semibold mb-2">Nitrogênio Amoniacal e Orgânico</h3>
+                  <p>
+                    A determinação do nitrogênio (nas formas amoniacal e orgânica) é essencial para avaliar o potencial de eutrofização da água. Inicialmente, 100 ml da amostra foram submetidos ao método Kjeldahl, com a adição de 0,02 ml de ácido sulfúrico concentrado e 0,03 g de HgSO₄ como catalisador. O aquecimento a 120°C por 30 minutos promoveu a digestão, convertendo o nitrogênio orgânico em amônio. Após a neutralização com NaOH e destilação (mantendo o pH adequado para que o NH₃ fosse liberado), a titulação com H₂SO₄ 0,0005M (utilizando cerca de 16,6 ml) permitiu o cálculo da concentração, que foi de 5,81 mg/L.
+                  </p>
+
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Turbidez</h3>
+                  <p>
+                    A turbidez indica a quantidade de partículas em suspensão e, portanto, a claridade da água. Com base na curva experimental que relaciona a absorbância (medida a 600 nm) com a turbidez, definida pela equação <span className="font-mono">Abs = 0,00108 · T - 0,0018</span>, e utilizando o valor de Abs = 0,021, determinou-se uma turbidez de aproximadamente 21,11 NTU.
+                  </p>
+
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Sólidos Totais</h3>
+                  <p>
+                    A concentração de sólidos totais foi determinada pela evaporação de 50 ml da amostra e pesagem do resíduo. Utilizando a fórmula <span className="font-mono">ST = (A - B) · 1000 / Vol</span> – onde A é o peso do béquer após a evaporação, B o peso do béquer vazio e Vol o volume da amostra – obteve-se um valor de 276 mg/L.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Lab 2 – Fósforo, DBO e Coliformes Fecais</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <h3 className="text-xl font-semibold mb-2">Fósforo Total</h3>
+                  <p>
+                    Para a determinação do fósforo total, 50 ml da amostra foram digeridos com 1 ml de ácido sulfúrico e 5 ml de ácido nítrico (65%), aquecidos a 105°C por 30 minutos. Após resfriamento, a solução foi neutralizada e diluída, e 25 ml foram misturados com 8 ml de solução reativa, formando um complexo colorido (azul de molibdênio). A absorbância, medida a 870 nm, indicou uma concentração de fósforo de 0,790 mg/L.
+                  </p>
+
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Demanda Bioquímica de Oxigênio (DBO)</h3>
+                  <p>
+                    A DBO, que mede a quantidade de matéria orgânica biodegradável, foi determinada diluindo a amostra em diferentes proporções (25x, 50x e 100x), sendo a diluição 100x a escolhida devido à alta carga orgânica. Após 5 dias de incubação e medição do oxigênio dissolvido inicial e final, a DBO foi calculada pela fórmula <span className="font-mono">DBO = (OD inicial - OD final) · 100</span>, resultando em 156 mg/L.
+                  </p>
+
+                  <h3 className="text-xl font-semibold mt-4 mb-2">Cálculo de Coliformes Fecais</h3>
+                  <p>
+                    Para a contagem de coliformes fecais, foi utilizado o método Colipaper. A amostra foi diluída 100 vezes e aplicada na cartela de gel. Após o período de incubação, a contagem média foi de 5 colônias por quadrado. Multiplicando-se esse valor por 6400 (fator de conversão) e pelo fator de diluição, obteve-se um resultado de 3.200.000 UFC/100 ml. Além disso, foram coletados dados de pH e temperaturas da amostra e ambiente para auxiliar no cálculo do IQA.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </section>
       </main>
 
