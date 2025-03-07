@@ -295,7 +295,6 @@ export default function Home() {
                       IQA ={" "}
                       <span className="inline-block">
                         ∏<sub>i=1 até n</sub> (q<sub>i</sub>)<sup>w<sub>i</sub></sup>
-                        {/* ∆˚µ˜∫√ç≈åßß∂ƒ©˙∆˚˚¬…æ‘“π */}
                       </span>
                     </p>
                   </div>
