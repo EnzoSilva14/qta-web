@@ -227,7 +227,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p>
-                    O rio Pinheiros está localizado na região sudoeste da cidade de São Paulo e desempenha um papel fundamental na drenagem urbana, recebendo contribuições de diversos córregos e canais ao longo de sua extensão. O rio nasce do encontro do rio Guarapiranga com o rio Grande e deságua no rio Tietê. Percorrendo áreas altamente urbanizadas e industrializadas, o que intensifica os desafios de preservação e recuperação de suas águas. Na capital, os trechos mais sujos estão entre as pontes Jaguaré e Ari Torres. 
+                    O rio Pinheiros está localizado na região sudoeste da cidade de São Paulo e desempenha um papel fundamental na drenagem urbana, recebendo contribuições de diversos córregos e canais ao longo de sua extensão. O rio nasce do encontro do rio Guarapiranga com o rio Grande e deságua no rio Tietê. Percorrendo áreas altamente urbanizadas e industrializadas, o que intensifica os desafios de preservação e recuperação de suas águas. Na capital, os trechos mais sujos estão entre as pontes Jaguaré e Ari Torres.
                   </p>
                   <Image
                     src="/rio_localizacao.png"
@@ -252,7 +252,7 @@ export default function Home() {
                     Em algumas publicações históricas, menciona-se que o Pinheiros teria tido algo em torno de 40 a 50 km de extensão, mas, com as sucessivas intervenções de engenharia (desvios, retificações e canalizações), sua extensão total foi gradualmente reduzida até chegar ao traçado atual.
                   </p>
                 </CardContent>
-                
+
                 <CardHeader>
                   <CardTitle>Principais Afluentes</CardTitle>
                 </CardHeader>
@@ -345,7 +345,7 @@ export default function Home() {
                       width={650}
                       height={300}
                       className="object-contain rounded-lg"
-                      />
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -385,7 +385,7 @@ export default function Home() {
                   <CardTitle>Parâmetros</CardTitle>
                 </CardHeader>
                 <CardContent>
-                <div className="h-128 rounded-lg flex items-start justify-center flex-col space-y-4">
+                  <div className="h-128 rounded-lg flex items-start justify-center flex-col space-y-4">
                     <div>
                       <span className="font-bold whitespace-pre-line">1. Coliformes (peso 0,15)</span>
                       {" "}
@@ -447,7 +447,7 @@ export default function Home() {
                         O oxigênio dissolvido é crucial para a respiração dos organismos aquáticos. Níveis baixos podem indicar elevada carga orgânica e risco para a fauna, comprometendo a saúde do ecossistema.
                       </span>
                     </div>
-                    
+
                   </div>
                 </CardContent>
               </Card>
@@ -464,7 +464,7 @@ export default function Home() {
                       width={750}
                       height={150}
                       className="object-contain rounded-lg"
-                      />
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -569,7 +569,7 @@ export default function Home() {
                   <CardTitle>Análise e Resultados</CardTitle>
                 </CardHeader>
                 <CardContent>
-                <div className="h-128 rounded-lg flex items-start justify-center flex-col space-y-4">
+                  <div className="h-128 rounded-lg flex items-start justify-center flex-col space-y-4">
                     <div>
                       <span>Com base na análise dos gráficos históricos dos nove parâmetros, mesmo que a maioria das amostras tenha sido coletada nos meses de outubro ou novembro (com exceção do ano de 2025), é possível extrair algumas inferências importantes sobre o nosso curso de água. Essa padronização na época de coleta elimina as variações sazonais mais evidentes, permitindo uma comparação direta entre os valores obtidos ao longo dos anos, sem a interferência significativa de mudanças climáticas sazonais.</span>
                     </div>
@@ -577,59 +577,59 @@ export default function Home() {
                       <span className="font-bold whitespace-pre-line">Coliformes:</span>
                       {" "}
                       <span>
-                      Ao analisar os valores de coliformes fecais é possível notar uma certa constância ao longo de vários anos, com exceção ao período de 2016 e 2017 onde houve um aumento considerável dos valores medidos desse parâmetro. Esse aumento pode ser resultado de uma combinação de fatores. O primeiro deles é a Transição pós-crise hídrica, marcando um período de retomada dos investimentos em saneamento. Esse processo de ajuste e a recuperação dos sistemas podem ter gerado instabilidades pontuais, refletidas no aumento dos níveis de contaminação. No ano de 2017, a região enfrentou fortes períodos de chuva o que pode ter aumentado o escoamento superficial, arrastando resíduos e contaminantes das áreas urbanas para os corpos d’água.
-                      Além disso, no ano de 2024 e 2025 foi observado novamente altos valores desse parâmetro, inclusive muito superiores aos evidenciados nos anos de 2016 e 2017. Para o ano de 2024, os diversos eventos climáticos extremos podem ter sobrecarregado ou até prejudicado algumas infraestruturas de saneamento . Já para 2025, o alto valor obtido certamente indica uma poluição maior desses corpos d’água, porém um dos fatores que pode ter influenciado foi a data da coleta da amostra, que diferentemente dos demais anos, foi coletada no mês de fevereiro.
+                        Ao analisar os valores de coliformes fecais é possível notar uma certa constância ao longo de vários anos, com exceção ao período de 2016 e 2017 onde houve um aumento considerável dos valores medidos desse parâmetro. Esse aumento pode ser resultado de uma combinação de fatores. O primeiro deles é a Transição pós-crise hídrica, marcando um período de retomada dos investimentos em saneamento. Esse processo de ajuste e a recuperação dos sistemas podem ter gerado instabilidades pontuais, refletidas no aumento dos níveis de contaminação. No ano de 2017, a região enfrentou fortes períodos de chuva o que pode ter aumentado o escoamento superficial, arrastando resíduos e contaminantes das áreas urbanas para os corpos d’água.
+                        Além disso, no ano de 2024 e 2025 foi observado novamente altos valores desse parâmetro, inclusive muito superiores aos evidenciados nos anos de 2016 e 2017. Para o ano de 2024, os diversos eventos climáticos extremos podem ter sobrecarregado ou até prejudicado algumas infraestruturas de saneamento . Já para 2025, o alto valor obtido certamente indica uma poluição maior desses corpos d’água, porém um dos fatores que pode ter influenciado foi a data da coleta da amostra, que diferentemente dos demais anos, foi coletada no mês de fevereiro.
                       </span>
                     </div>
-                      <div>
+                    <div>
                       <span className="font-bold whitespace-pre-line">pH:</span>{" "}
                       <span>
                         Ao longo dos anos os valores de pH apresentam grandes variações sem ser possível identificar uma tendência clara relacionada a eventos específicos. Entretanto, o valor medido para 2025 foi significativamente inferior, o que pode sugerir um aumento da acidez, possivelmente derivado do aumento da poluição e da chuva ácida.
                       </span>
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                       <span className="font-bold whitespace-pre-line">DBO:</span>{" "}
                       <span>
                         Enquanto a maioria dos anos manteve valores relativamente estáveis, 2025 mostrou um aumento notório na DBO, indicando uma maior carga orgânica e possivelmente maiores descargas de esgoto e resíduos industriais.
                       </span>
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                       <span className="font-bold whitespace-pre-line">Nitrogênio Total:</span>{" "}
                       <span>
                         Os níveis de nitrogênio total variaram consideravelmente ao longo dos anos, mas o valor de 2025 permanece dentro da variação típica observada, sugerindo que, apesar de flutuações, não houve alterações drásticas para esse parâmetro.
                       </span>
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                       <span className="font-bold whitespace-pre-line">Fósforo Total:</span>{" "}
                       <span>
                         Similarmente ao nitrogênio, os níveis de fósforo total em 2025 estão alinhados com a tendência dos anos anteriores, indicando que a concentração desse nutriente manteve-se estável dentro dos parâmetros normais.
                       </span>
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                       <span className="font-bold whitespace-pre-line">Temperatura:</span>{" "}
                       <span>
                         A temperatura mostrou uma variação menor historicamente, mas em 2025 foi registrada uma elevação de cerca de 8 ºC em comparação aos anos anteriores, o que pode ser atribuído tanto ao aquecimento global quanto a uma coleta realizada em condições incomuns.
                       </span>
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                       <span className="font-bold whitespace-pre-line">Turbidez:</span>{" "}
                       <span>
                         Observa-se que a turbidez se manteve bastante estável, variando entre 20 e 40, com exceção de picos em anos específicos como 2012. O valor de 2025 se enquadra entre os menores registrados, possivelmente indicando condições de menor sedimentação ou melhor gerenciamento ambiental local.
                       </span>
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                       <span className="font-bold whitespace-pre-line">Resíduos Totais:</span>{" "}
                       <span>
                         Os valores de resíduos totais se mantiveram consistentes, variando entre 200 e 300 mg/L. A medição em 2025 permanece dentro dessa faixa, sugerindo que não houve um aumento significativo na presença de sólidos totais.
                       </span>
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                       <span className="font-bold whitespace-pre-line">Oxigênio Dissolvido:</span>{" "}
                       <span>
                         Este parâmetro apresentou valores extremamente altos em 2012 e 2013, provavelmente devido a conversões incorretas. Em 2025, embora tenha havido uma variação que pode ser atribuída tanto a alterações na coleta quanto às condições ambientais, o nível registrado foi de 81%, valor que merece atenção para a interpretação dos dados.
                       </span>
-                      </div>
-                </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -739,20 +739,63 @@ export default function Home() {
                   <CardTitle>Lab 1 – Nitrogênio, Sólidos Totais e Turbidez</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <h3 className="text-xl font-semibold mb-2">Nitrogênio Amoniacal e Orgânico</h3>
-                  <p>
-                    A determinação do nitrogênio (nas formas amoniacal e orgânica) é essencial para avaliar o potencial de eutrofização da água. Inicialmente, 100 ml da amostra foram submetidos ao método Kjeldahl, com a adição de 0,02 ml de ácido sulfúrico concentrado e 0,03 g de HgSO₄ como catalisador. O aquecimento a 120°C por 30 minutos promoveu a digestão, convertendo o nitrogênio orgânico em amônio. Após a neutralização com NaOH e destilação (mantendo o pH adequado para que o NH₃ fosse liberado), a titulação com H₂SO₄ 0,0005M (utilizando cerca de 16,6 ml) permitiu o cálculo da concentração, que foi de 5,81 mg/L.
+                  <h3 className="text-xl font-semibold mb-4">Nitrogênio Amoniacal e Orgânico</h3>
+                  <p className="mb-2">
+                    Um importante indicador de contaminação da água é a presença de Nitrogênio dissolvido. Para a análise da qualidade da água do Rio Pinheiros foi necessário quantificar essas formas de nitrogênio (amônia e nitrogênio orgânico), que fazem parte das responsáveis por um processo de poluição chamado eutrofização. Contudo, a concentração de nitrogênio não é facilmente calculada de forma direta a partir da amostra coletada (o resultado dessa análise apresentaria uma concentração menor de nitrogênio do que a real) e, portanto, é realizado um processo chamado “digestão”, capaz de converter o nitrogênio orgânico em amônio (NH<sub>4</sub><sup>+</sup>), que pode então ser quantificado através de uma titulação.
                   </p>
+                  <p className="mb-2">
+                    Para determinar essa concentração foi feita, primeiramente, a digestão de 100 ml da amostra, através do método Nitrogênio Kjeldahl, com adição de 0,02 ml concentrado de ácido sulfúrico e 0,03 g de catalisador HgSO<sub>4</sub>. Mantendo o sistema em aquecimento, a uma temperatura controlada de 120℃ por 30 minutos, garantiu-se uma reação completa, que favorece a conversão do nitrogênio orgânico em amônio. Após a digestão, foi adicionada à amostra 3 gotas do indicador de pH fenolftaleína, e realizada a neutralização da solução com aproximadamente 5 ml de hidróxido de sódio (NaOH) 50%, até que a solução apresentasse coloração rosa, indicando o aumento do pH, e garantindo a presença da forma não ionizada (NH<sub>3</sub>), que é volátil e pode ser destilada.
+                  </p>
+                  <p className="mb-2">
+                    Em seguida, foi realizada a destilação para coletar a amônia presente na amostra. A amônia liberada foi recolhida em uma solução com 50 ml de água destilada (pH 5). Este controle de pH é crucial para evitar a perda de amônia durante a destilação. Ao interromper a destilação antes que o Erlenmeyer secasse, garantiu-se a coleta de uma quantidade suficiente de amônia para a titulação.
+                  </p>
+                  <p className="mb-2">
+                    Finalmente, a titulação foi realizada com H<sub>2</sub>SO<sub>4</sub> 0,0005M até que a solução atingisse uma coloração semelhante à da amostra de água coletada no Rio Pinheiros, o que indica que toda a amônia foi neutralizada. A partir do da quantidade de H<sub>2</sub>SO<sub>4</sub> utilizada (cerca de 16.6 ml), do balanceamento das equações de conversão e da relação de diluição da amostra, foi possível calcular a concentração de nitrogênio na amostra inicial (5,81mg de nitrogênio por litro de água).
+                  </p>
+                  <p className="mb-2 text-center">
+                    Equações químicas:
+                  </p>
+                  <ul className="text-center">
+                    <li className="mb-1">(Digestão) Nitrogênio Orgânico(aq.) → NH<sub>4</sub><sup>+</sup> (aq.) (Presença de catalisador)</li>
+                    <li className="mb-1">(Neutralização): NH<sub>4</sub><sup>+</sup> (aq.) + OH<sup>-</sup> (aq.) → NH<sub>3</sub> (g) + H<sub>2</sub>O(l)</li>
+                    <li className="mb-1">(Recolhimento de Gás): NH<sub>3</sub> (g) + H<sub>2</sub>O (l) → NH<sub>4</sub><sup>+</sup> (aq.) + OH<sup>-</sup> (aq.)</li>
+                    <li className="mb-1">(Titulação): OH<sup>-</sup> (aq.) + H<sup>+</sup> (aq.) → H<sub>2</sub>O (l)</li>
+                  </ul>
+
 
                   <h3 className="text-xl font-semibold mt-4 mb-2">Turbidez</h3>
                   <p>
-                    A turbidez indica a quantidade de partículas em suspensão e, portanto, a claridade da água. Com base na curva experimental que relaciona a absorbância (medida a 600 nm) com a turbidez, definida pela equação <span className="font-mono">Abs = 0,00108 · T - 0,0018</span>, e utilizando o valor de Abs = 0,021, determinou-se uma turbidez de aproximadamente 21,11 NTU.
+                    Outro importante indicativo da qualidade da água é a turbidez. A turbidez é uma medida que indica o grau de clareza ou limpidez da água.
+                    Quanto mais turva é a água, maior é a quantidade de partículas suspensas, o que pode indicar a presença elevada de agentes patogênicos que são prejudiciais à saúde humana e ambiental.
+                    Para calcular a turbidez na amostra foi usada como base a curva experimental de turbidez (NTU) em função da absorbância em 600 nm.
+                    A reta média dos valores levantados resultou na seguinte igualdade: <span className="font-mono">Abs = 0,00108 · T - 0,0018</span>, e utilizando o valor de <span className="font-mono">Abs = 0,021</span>, determinou-se uma turbidez de aproximadamente <span className="font-mono">21,11 NTU</span>.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-4 mb-2">Sólidos Totais</h3>
-                  <p>
-                    A concentração de sólidos totais foi determinada pela evaporação de 50 ml da amostra e pesagem do resíduo. Utilizando a fórmula <span className="font-mono">ST = (A - B) · 1000 / Vol</span> – onde A é o peso do béquer após a evaporação, B o peso do béquer vazio e Vol o volume da amostra – obteve-se um valor de 276 mg/L.
+                  <p className="mb-2">
+                    A medição de sólidos totais também é importante na determinação da qualidade da água. Os sólidos totais incluem todos os materiais suspensos e dissolvidos na água, como minerais, sais, metais, orgânicos e inorgânicos. Altos níveis de sólidos podem indicar contaminação por esgoto, resíduos agrícolas ou industriais, que podem incluir substâncias tóxicas e prejudiciais à saúde humana e à vida aquática.
                   </p>
+                  <p className="mb-2">
+                    Para medir a quantidade de sólidos totais é necessário calcular a massa de resíduos sólidos restantes na amostra. Para isso, foi medido o peso inicial de um béquer seco, realizado a evaporação total de uma amostra de água coletada do Rio Pinheiros, e em seguida medido novamente o peso no béquer e calculado a massa de sólidos totais resultantes por litro de amostra.
+                  </p>
+                  <p className="mb-2">
+                    Para a medição da amostra, um béquer de 250 ml foi colocado na estufa por 10 minutos para garantir que não houvesse quaisquer resíduos prévios nele. A massa do béquer vazio foi de 99,8577 g. Foi adicionado 50 ml (0,05 L) da amostra ao béquer, que logo foi evaporado com uma chapa de aquecimento. Após o béquer ter sido resfriado (para garantir as mesmas condições de medidas), sua massa foi de 99,8715 g.
+                  </p>
+                  <p className="mb-2">
+                    Para calcular a quantidade de sólidos totais, pode-se utilizar a seguinte fórmula:
+                  </p>
+                  <div className="text-center font-semibold mb-2">
+                    <pre class="text-center font-semibold mb-2 bg-gray-100 p-3 rounded">
+                      ST = (A − B) * 1000 / Vol (mg/L)
+                    </pre>
+                  </div>
+                  <p className="mb-2">
+                    Onde: A (g) é o peso do béquer seco em estufa depois da amostra ser evaporada, B (g) é o peso do béquer vazio e Vol. (L) é o volume da amostra.
+                  </p>
+                  <p className="mb-2">
+                    Aplicando os valores obtidos na equação conclui-se que a quantidade de sólidos totais na amostra era de 276 mg/L.
+                  </p>
+
                 </CardContent>
               </Card>
 
@@ -762,19 +805,41 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <h3 className="text-xl font-semibold mb-2">Fósforo Total</h3>
-                  <p>
-                    Para a determinação do fósforo total, 50 ml da amostra foram digeridos com 1 ml de ácido sulfúrico e 5 ml de ácido nítrico (65%), aquecidos a 105°C por 30 minutos. Após resfriamento, a solução foi neutralizada e diluída, e 25 ml foram misturados com 8 ml de solução reativa, formando um complexo colorido (azul de molibdênio). A absorbância, medida a 870 nm, indicou uma concentração de fósforo de 0,790 mg/L.
+                  <p className="mb-2">
+                    A determinação do fósforo total é crucial para avaliar a qualidade da água, pois altas concentrações de fósforo podem contribuir para a eutrofização. O processo começou com a digestão de 50 ml de amostra de água em um Erlenmeyer de 250 ml, adicionando-se 1 ml de ácido sulfúrico (H₂SO₄) concentrado e 5 ml de ácido nítrico (HNO₃) a 65%. Essa combinação acidifica a amostra, auxiliando na decomposição dos compostos de fósforo. A amostra foi aquecida a 105°C em um sistema de refluxo durante 30 minutos para garantir a completa digestão dos compostos.
+                  </p>
+                  <p className="mb-2">
+                    Após o resfriamento, foram adicionadas 3 gotas de fenolftaleína à amostra, e a solução foi neutralizada com NaOH 5M até adquirir uma coloração levemente rosa, preparando-a para as reações subsequentes. A solução neutralizada foi então transferida para um balão volumétrico de 100 ml e completada até o menisco com água deionizada. Isso facilitou a comparação com a curva de calibração e a precisão dos cálculos de diluição.
+                  </p>
+                  <p className="mb-2">
+                    Em seguida, 25 ml da solução foram tratados com 8 ml de solução reativa, formando um complexo colorido com os fosfatos. O volume final foi ajustado para 50 ml com água deionizada, e a amostra repousou por 5 minutos para formar o azul de molibdênio. A absorbância foi medida em um espectrofotômetro a 870 nm, comparando-se com uma curva padrão para determinar a concentração de fósforo, resultando em 0,790 mg/L na amostra.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-4 mb-2">Demanda Bioquímica de Oxigênio (DBO)</h3>
-                  <p>
-                    A DBO, que mede a quantidade de matéria orgânica biodegradável, foi determinada diluindo a amostra em diferentes proporções (25x, 50x e 100x), sendo a diluição 100x a escolhida devido à alta carga orgânica. Após 5 dias de incubação e medição do oxigênio dissolvido inicial e final, a DBO foi calculada pela fórmula <span className="font-mono">DBO = (OD inicial - OD final) · 100</span>, resultando em 156 mg/L.
+                  <p className="mb-2">
+                    A Demanda Bioquímica de Oxigênio (DBO) mede, indiretamente, a quantidade de matéria orgânica biodegradável na água, crucial para entender seu impacto ecológico. A DBO é, na verdade, uma medida do oxigênio necessário para que microorganismos aeróbicos decomponham essa matéria orgânica em condições controladas de laboratório. A amostra foi diluída em diferentes proporções (25x, 50x, 100x) para garantir oxigênio suficiente durante os 5 dias de teste. A diluição escolhida foi 100x, considerando o alto conteúdo orgânico da amostra.
+                  </p>
+                  <p className="mb-2">
+                    A preparação envolveu adicionar 28 ml da amostra a 672 ml de água saturada em oxigênio para a diluição 25x. A diluição 50x foi feita com 300 ml da diluição 25x e 300 ml de água saturada, e a diluição 100x com 200 ml da diluição 50x e 200 ml de água saturada. O experimento foi monitorado durante 5 dias, medindo-se o oxigênio dissolvido inicial e final. A DBO foi calculada pela fórmula: DBO = (OD inicial - OD final) * 100, refletindo a atividade biodegradável na amostra.
+                  </p>
+                  <p className="mb-2">
+                    O valor de DBO calculado foi 156 mg/L.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-4 mb-2">Cálculo de Coliformes Fecais</h3>
-                  <p>
-                    Para a contagem de coliformes fecais, foi utilizado o método Colipaper. A amostra foi diluída 100 vezes e aplicada na cartela de gel. Após o período de incubação, a contagem média foi de 5 colônias por quadrado. Multiplicando-se esse valor por 6400 (fator de conversão) e pelo fator de diluição, obteve-se um resultado de 3.200.000 UFC/100 ml. Além disso, foram coletados dados de pH e temperaturas da amostra e ambiente para auxiliar no cálculo do IQA.
+                  <p className="mb-2">
+                    Para a determinação de coliformes totais e E. coli presentes na água, foi utilizada uma cartela com meio de cultura em gel chamada “Colipaper”. Essa análise é importante pois a presença dessas bactérias na água coletada indica uma carga fecal, ou seja, indica que essa água pode trazer riscos à saúde humana. A coleta da amostra de água foi feita na Ponte Cidade Jardim.
                   </p>
+                  <p className="mb-2">
+                    Para fazer a contagem de coliformes totais, a folha de Colipaper foi mergulhada numa amostra da água do Rio Pinheiros diluída em 100 vezes. Essa diluição foi necessária pois sabe-se previamente que essas águas têm um nível elevado de contaminação, e sem a diluição não seria possível identificar pontos distintos de colônias - seriam formados grandes aglomerados.
+                  </p>
+                  <p className="mb-2">
+                    Após o tempo de incubação, foi feita a contagem de colônias, identificando uma média de 5 colônias por quadrado. Ao multiplicar a média por 3200 (valor de referência das instruções) e, em seguida, por 100 (relativo ao fator de diluição) chegou-se ao resultado de 1.600.000 UFC/100 ml.
+                  </p>
+                  <p className="mb-2">
+                    Para essa mesma amostra, foram também realizadas as medidas de pH, temperatura da água e temperatura ambiente, a fim de obter dados suficientes para o cálculo do IQA.
+                  </p>
+
                 </CardContent>
               </Card>
             </div>
