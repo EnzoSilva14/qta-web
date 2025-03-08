@@ -1,13 +1,25 @@
 "use client"; // Se você estiver usando o app router do Next.js
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 // Array com dados históricos (placeholders)
-const historicalData = [
+interface HistoricalData {
+  year: string;
+  imageSrc: string;
+  topic1: string;
+  topic1Description: string;
+  topic2: string;
+  topic2Description: string;
+  topic3: string;
+  topic3Description: string;
+  finalDescription?: string;
+}
+
+const historicalData: HistoricalData[] = [
   {
     year: "1937 - Rio Relativamente Limpo e Início da Canalização.",
     imageSrc: "/rio_1937.png",
@@ -59,28 +71,77 @@ Neste período, o Pinheiros recebia diariamente dezenas de metros cúbicos de es
 Nos anos 2000, cresceu a pressão pública pela despoluição tanto do Pinheiros quanto do Rio Tietê. Embora o Projeto Tietê (iniciado nos anos 1990 com apoio internacional) tenha focado principalmente no rio Tietê, indiretamente incluía melhorias que afetariam o Pinheiros (expansão do tratamento de esgoto na região metropolitana). Ainda assim, em 2010 pouco resultado concreto era visto no Pinheiros. A consciência ambiental em torno da degradação do rio aumentou, preparando o terreno para ações mais robustas na década seguinte.
     `
   }
-]
+];
+
+// Componente para o carrossel de fotos
+interface PhotoCarouselProps {
+  images: string[];
+  altPrefix: string;
+}
+
+const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, altPrefix }) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className="relative flex items-center justify-center bg-white shadow-md rounded-lg p-4 min-h-[300px] overflow-hidden mt-4">
+      <button
+        onClick={handlePrev}
+        className="absolute left-0 ml-2 text-3xl font-bold p-2 rounded-full hover:bg-gray-100 transition-colors"
+        aria-label="Anterior"
+      >
+        &larr;
+      </button>
+      <Image
+        src={images[currentIndex]}
+        alt={`${altPrefix} ${currentIndex + 1}`}
+        width={500}
+        height={300}
+        className="mx-auto rounded object-contain"
+      />
+      <button
+        onClick={handleNext}
+        className="absolute right-0 mr-2 text-3xl font-bold p-2 rounded-full hover:bg-gray-100 transition-colors"
+        aria-label="Próximo"
+      >
+        &rarr;
+      </button>
+    </div>
+  );
+};
 
 export default function Home() {
   // Índice do item histórico atual
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  // Função para ir para o ano anterior
-  function handlePrev() {
+  const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? historicalData.length - 1 : prevIndex - 1
-    )
-  }
+    );
+  };
 
-  // Função para ir para o próximo ano
-  function handleNext() {
+  const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === historicalData.length - 1 ? 0 : prevIndex + 1
-    )
-  }
+    );
+  };
 
-  // Dados do item histórico atual
-  const currentData = historicalData[currentIndex]
+  const currentData = historicalData[currentIndex];
+
+  // Arrays de fotos para os laboratórios
+  const lab1Photos: string[] = Array.from({ length: 21 }, (_, i) => `/lab1foto${i + 1}.png`);
+  const lab2Photos: string[] = Array.from({ length: 13 }, (_, i) => `/lab2foto${i + 1}.jpeg`);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -151,13 +212,11 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* Nova Seção: História do Rio Pinheiros - aparece primeiro */}
+        {/* Seção: História do Rio Pinheiros */}
         <section id="contexto" className="bg-gray-50 py-16">
           <div className="container mx-auto px-6">
             <h3 className="text-3xl font-semibold mb-8">História do Rio Pinheiros</h3>
             <div className="relative flex items-center justify-center bg-white shadow-md rounded-lg p-4 min-h-[500px] overflow-y-auto">
-              {/* Botão para voltar */}
               <button
                 onClick={handlePrev}
                 className="absolute left-0 ml-2 text-3xl font-bold p-2 rounded-full hover:bg-gray-100 transition-colors"
@@ -166,7 +225,6 @@ export default function Home() {
                 &larr;
               </button>
 
-              {/* Conteúdo (foto + texto) */}
               <div className="text-center">
                 <Image
                   src={currentData.imageSrc}
@@ -179,32 +237,30 @@ export default function Home() {
                 <div className="mt-4 space-y-4">
                   <div>
                     <p className="text-left">
-                      <span className="font-bold whitespace-pre-line">{currentData.topic1}</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">{currentData.topic1}</span>{" "}
                       <span>{currentData.topic1Description}</span>
                     </p>
                   </div>
                   <div>
                     <p className="text-left">
-                      <span className="font-bold whitespace-pre-line">{currentData.topic2}</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">{currentData.topic2}</span>{" "}
                       <span>{currentData.topic2Description}</span>
                     </p>
                   </div>
                   <div>
                     <p className="text-left">
-                      <span className="font-bold whitespace-pre-line">{currentData.topic3}</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">{currentData.topic3}</span>{" "}
                       <span>{currentData.topic3Description}</span>
                     </p>
                   </div>
-                  <div>
-                    <p className="text-left whitespace-pre-line">{currentData.finalDescription}</p>
-                  </div>
+                  {currentData.finalDescription && (
+                    <div>
+                      <p className="text-left whitespace-pre-line">{currentData.finalDescription}</p>
+                    </div>
+                  )}
                 </div>
               </div>
 
-              {/* Botão para avançar */}
               <button
                 onClick={handleNext}
                 className="absolute right-0 mr-2 text-3xl font-bold p-2 rounded-full hover:bg-gray-100 transition-colors"
@@ -216,7 +272,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Demais seções */}
+        {/* Seção: Mapa e Localização */}
         <section id="mapa_e_localizacao" className="py-16">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-semibold mb-8">Mapa e Localização do Rio em Estudo</h2>
@@ -258,7 +314,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p className="mb-4">
-                    Entre os principais afluentes do rio Pinheiros, destacam-se o córrego Uberaba e o córrego Sapateiro, que também estão sendo objeto de estudo neste projeto. Além deles, outros córregos menores contribuem para o aumento do volume de água, bem como para a entrada de poluentes, em função do lançamento de esgoto doméstico e industrial sem tratamento adequado. Essa rede de drenagem é determinante para a dinâmica hídrica da região, afetando tanto a qualidade quanto a quantidade de água disponível ao longo do rio.
+                    Entre os principais afluentes do rio Pinheiros, destacam-se o córrego Uberaba e o córrego Sapateiro, que também estão sendo objeto de estudo neste projeto. Além deles, outros córregos menores contribuem para a entrada de poluentes, em função do lançamento de esgoto doméstico e industrial sem tratamento adequado. Essa rede de drenagem é determinante para a dinâmica hídrica da região.
                   </p>
                 </CardContent>
               </Card>
@@ -266,6 +322,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Seção: Qualidade da Água */}
         <section id="qualidade" className="bg-gray-50 py-16">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-semibold mb-8">Qualidade da Água</h2>
@@ -275,21 +332,25 @@ export default function Home() {
                   <CardTitle>Descrição</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>A qualidade de um corpo d'água não pode ser determinada apenas por um único parâmetro. Vários fatores — como a concentração de oxigênio dissolvido, a presença de nutrientes (fósforo e nitrogênio), o nível de coliformes fecais, o pH, a turbidez, entre outros — interagem de forma complexa e influenciam diretamente o estado geral das águas. Para integrar e interpretar todos esses indicadores de maneira equilibrada, desenvolveu-se o Índice de Qualidade das Águas (IQA).</p>
+                  <p>
+                    A qualidade de um corpo d'água não pode ser determinada apenas por um único parâmetro. Vários fatores — como a concentração de oxigênio dissolvido, a presença de nutrientes (fósforo e nitrogênio), o nível de coliformes fecais, o pH, a turbidez, entre outros — interagem de forma complexa e influenciam diretamente o estado geral das águas. Para integrar e interpretar todos esses indicadores de maneira equilibrada, desenvolveu-se o Índice de Qualidade das Águas (IQA).
+                  </p>
                 </CardContent>
                 <CardContent>
-                  <p>O IQA se baseia em uma fórmula que considera tanto o valor de qualidade de cada parâmetro (medido em campo) quanto a importância relativa que esse parâmetro possui para a saúde do ecossistema aquático e para o uso humano. Dessa forma, parâmetros mais críticos, como o oxigênio dissolvido, acabam recebendo um peso maior, garantindo que sua influência no resultado final seja proporcional à sua relevância ambiental e sanitária.</p>
+                  <p>
+                    O IQA se baseia em uma fórmula que considera tanto o valor de qualidade de cada parâmetro (medido em campo) quanto a importância relativa que esse parâmetro possui para a saúde do ecossistema aquático e para o uso humano. Dessa forma, parâmetros mais críticos, como o oxigênio dissolvido, acabam recebendo um peso maior, garantindo que sua influência no resultado final seja proporcional à sua relevância ambiental e sanitária.
+                  </p>
                 </CardContent>
                 <CardContent>
-                  <p>Essa abordagem permite uma avaliação mais completa e confiável da condição de um rio ou córrego, pois sintetiza diversas informações em um único número, que pode variar de 0 a 100.</p>
+                  <p>
+                    Essa abordagem permite uma avaliação mais completa e confiável da condição de um rio ou córrego, pois sintetiza diversas informações em um único número, que pode variar de 0 a 100.
+                  </p>
                 </CardContent>
                 <CardContent>
                   <p className="mb-2">
                     O IQA é calculado a partir de nove variáveis, cada uma com um peso específico (<em>w<sub>i</sub></em>)
                     e um valor de qualidade (<em>q<sub>i</sub></em>), conforme a fórmula abaixo:
                   </p>
-
-                  {/* Fórmula em destaque */}
                   <div className="bg-white p-4 rounded-lg flex flex-col items-center justify-center border shadow-sm">
                     <p className="text-2xl font-bold">
                       IQA ={" "}
@@ -298,7 +359,6 @@ export default function Home() {
                       </span>
                     </p>
                   </div>
-
                   <p className="mt-4">em que:</p>
                   <div className="h-auto rounded-lg flex flex-col space-y-4 mt-2">
                     <div>
@@ -308,22 +368,19 @@ export default function Home() {
                     <div>
                       <span className="font-bold">q<sub>i</sub>:</span>{" "}
                       <span>
-                        qualidade do i-ésimo parâmetro, também variando de 0 a 100, obtida por meio de uma
-                        “curva média de variação de qualidade”.
+                        qualidade do i-ésimo parâmetro, também variando de 0 a 100, obtida por meio de uma “curva média de variação de qualidade”.
                       </span>
                     </div>
                     <div>
                       <span className="font-bold">w<sub>i</sub>:</span>{" "}
                       <span>
-                        peso do i-ésimo parâmetro, um valor entre 0 e 1 que reflete a relevância desse
-                        parâmetro na determinação global da qualidade da água.
+                        peso do i-ésimo parâmetro, um valor entre 0 e 1 que reflete a relevância desse parâmetro na determinação global da qualidade da água.
                       </span>
                     </div>
                     <div>
                       <span className="font-bold">n:</span>{" "}
                       <span>
-                        número de variáveis que entram no cálculo do IQA (para este estudo foram usados
-                        9 parâmetros).
+                        número de variáveis que entram no cálculo do IQA (para este estudo foram usados 9 parâmetros).
                       </span>
                     </div>
                   </div>
@@ -348,33 +405,11 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              {/* <Card>
-                <CardHeader>
-                  <CardTitle>Estado Atual</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p>Informações sobre o estado atual da qualidade da água no rio/córrego.</p>
-                  <ul className="list-disc list-inside mt-4">
-                    <li>pH: 7.2</li>
-                    <li>Temperatura: 22°C</li>
-                    <li>Turbidez: 5 NTU</li>
-                    <li>Oxigênio Dissolvido: 8 mg/L</li>
-                  </ul>
-                  <div className="h-max mt-4 rounded-lg flex items-center justify-center">
-                    <Image
-                      src="/class_do_IQA.png"
-                      alt="Classificação do IQA"
-                      width={340}
-                      height={150}
-                      className="object-contain rounded-lg"
-                      />
-                  </div>
-                </CardContent>
-              </Card> */}
             </div>
           </div>
         </section>
 
+        {/* Seção: Parâmetros do IQA */}
         <section id="iqa" className="py-16">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-semibold mb-8">Parâmetros do IQA</h2>
@@ -386,67 +421,59 @@ export default function Home() {
                 <CardContent>
                   <div className="h-128 rounded-lg flex items-start justify-center flex-col space-y-4">
                     <div>
-                      <span className="font-bold whitespace-pre-line">1. Coliformes (peso 0,15)</span>
-                      {" "}
-                      <span>Os coliformes, especialmente os do grupo fecal, são indicadores biológicos de contaminação por esgoto doméstico ou outras fontes de poluição fecal. A presença elevada desses microrganismos representa risco à saúde humana e pode tornar a água imprópria para consumo ou recreação. Por sua relevância na identificação de condições sanitárias e potencial patogênico, o parâmetro recebe um peso de 0,15.</span>
+                      <span className="font-bold whitespace-pre-line">1. Coliformes (peso 0,15)</span>{" "}
+                      <span>
+                        Os coliformes, especialmente os do grupo fecal, são indicadores biológicos de contaminação por esgoto doméstico ou outras fontes de poluição fecal. A presença elevada desses microrganismos representa risco à saúde humana e pode tornar a água imprópria para consumo ou recreação. Por sua relevância na identificação de condições sanitárias e potencial patogênico, o parâmetro recebe um peso de 0,15.
+                      </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">2. pH (peso 0,12)</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">2. pH (peso 0,12)</span>{" "}
                       <span>
                         O pH mede o grau de acidez ou alcalinidade da água. A maioria dos organismos aquáticos se desenvolve em faixas de pH restritas, próximas da neutralidade (entre 6 e 8). Valores muito elevados ou baixos podem prejudicar o equilíbrio químico e a biodiversidade.
                       </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">3. DBO (peso 0,10)</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">3. DBO (peso 0,10)</span>{" "}
                       <span>
                         A Demanda Bioquímica de Oxigênio (DBO) indica a quantidade de oxigênio necessária para a decomposição da matéria orgânica presente na água, refletindo a carga orgânica e a presença de poluentes.
                       </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">4. Nitrogênio Total (peso 0,10)</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">4. Nitrogênio Total (peso 0,10)</span>{" "}
                       <span>
                         O nitrogênio total inclui todas as formas deste elemento (orgânico, amoniacal, nitrato e nitrito). Em excesso, pode desencadear a eutrofização e prejudicar a qualidade da água.
                       </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">5. Fósforo Total (peso 0,10)</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">5. Fósforo Total (peso 0,10)</span>{" "}
                       <span>
                         O fósforo total avalia a soma de todas as formas de fósforo na água. Embora essencial, concentrações elevadas podem acelerar processos de eutrofização, levando à proliferação de algas e diminuição da qualidade da água.
                       </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">6. Temperatura (peso 0,10)</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">6. Temperatura (peso 0,10)</span>{" "}
                       <span>
                         A temperatura influencia a solubilidade de gases, como o oxigênio, e o metabolismo dos organismos aquáticos. Mudanças acentuadas podem afetar os processos físicos, químicos e biológicos do ecossistema.
                       </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">7. Turbidez (peso 0,08)</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">7. Turbidez (peso 0,08)</span>{" "}
                       <span>
                         A turbidez mede o grau de transparência da água, indicando a quantidade de partículas em suspensão, como sedimentos e matéria orgânica. Níveis elevados podem afetar a fotossíntese e reduzir a penetração de luz.
                       </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">8. Resíduo Total (peso 0,08)</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">8. Resíduo Total (peso 0,08)</span>{" "}
                       <span>
                         O resíduo total engloba os sólidos presentes na água, tanto dissolvidos quanto em suspensão. Valores altos podem sugerir poluição por substâncias químicas ou excesso de matéria orgânica.
                       </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">9. Oxigênio Dissolvido (peso 0,17)</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">9. Oxigênio Dissolvido (peso 0,17)</span>{" "}
                       <span>
                         O oxigênio dissolvido é crucial para a respiração dos organismos aquáticos. Níveis baixos podem indicar elevada carga orgânica e risco para a fauna, comprometendo a saúde do ecossistema.
                       </span>
                     </div>
-
                   </div>
                 </CardContent>
               </Card>
@@ -455,7 +482,9 @@ export default function Home() {
                   <CardTitle>Parâmetros obtidos no estudo</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>Abaixo estão os 9 parâmetros indicados e as respectivas curvas médias de variação de qualidade das águas. Os pontos em vermelho indicam os valores obtidos pelo grupo no estudo de cada parâmetro de uma amostra de água obtida em fevereiro de 2025:</p>
+                  <p>
+                    Abaixo estão os 9 parâmetros indicados e as respectivas curvas médias de variação de qualidade das águas. Os pontos em vermelho indicam os valores obtidos pelo grupo no estudo de cada parâmetro de uma amostra de água obtida em fevereiro de 2025:
+                  </p>
                   <div className="h-max mt-4 rounded-lg flex items-center justify-center">
                     <Image
                       src="/parametros_iqa.png"
@@ -570,14 +599,15 @@ export default function Home() {
                 <CardContent>
                   <div className="h-128 rounded-lg flex items-start justify-center flex-col space-y-4">
                     <div>
-                      <span>Com base na análise dos gráficos históricos dos nove parâmetros, mesmo que a maioria das amostras tenha sido coletada nos meses de outubro ou novembro (com exceção do ano de 2025), é possível extrair algumas inferências importantes sobre o nosso curso de água. Essa padronização na época de coleta elimina as variações sazonais mais evidentes, permitindo uma comparação direta entre os valores obtidos ao longo dos anos, sem a interferência significativa de mudanças climáticas sazonais.</span>
+                      <span>
+                        Com base na análise dos gráficos históricos dos nove parâmetros, mesmo que a maioria das amostras tenha sido coletada nos meses de outubro ou novembro (com exceção do ano de 2025), é possível extrair algumas inferências importantes sobre o nosso curso de água. Essa padronização na época de coleta elimina as variações sazonais mais evidentes, permitindo uma comparação direta entre os valores obtidos ao longo dos anos, sem a interferência significativa de mudanças climáticas sazonais.
+                      </span>
                     </div>
                     <div>
-                      <span className="font-bold whitespace-pre-line">Coliformes:</span>
-                      {" "}
+                      <span className="font-bold whitespace-pre-line">Coliformes:</span>{" "}
                       <span>
                         Ao analisar os valores de coliformes fecais é possível notar uma certa constância ao longo de vários anos, com exceção ao período de 2016 e 2017 onde houve um aumento considerável dos valores medidos desse parâmetro. Esse aumento pode ser resultado de uma combinação de fatores. O primeiro deles é a Transição pós-crise hídrica, marcando um período de retomada dos investimentos em saneamento. Esse processo de ajuste e a recuperação dos sistemas podem ter gerado instabilidades pontuais, refletidas no aumento dos níveis de contaminação. No ano de 2017, a região enfrentou fortes períodos de chuva o que pode ter aumentado o escoamento superficial, arrastando resíduos e contaminantes das áreas urbanas para os corpos d’água.
-                        Além disso, no ano de 2024 e 2025 foi observado novamente altos valores desse parâmetro, inclusive muito superiores aos evidenciados nos anos de 2016 e 2017. Para o ano de 2024, os diversos eventos climáticos extremos podem ter sobrecarregado ou até prejudicado algumas infraestruturas de saneamento . Já para 2025, o alto valor obtido certamente indica uma poluição maior desses corpos d’água, porém um dos fatores que pode ter influenciado foi a data da coleta da amostra, que diferentemente dos demais anos, foi coletada no mês de fevereiro.
+                        Além disso, no ano de 2024 e 2025 foi observado novamente altos valores desse parâmetro, inclusive muito superiores aos evidenciados nos anos de 2016 e 2017. Para o ano de 2024, os diversos eventos climáticos extremos podem ter sobrecarregado ou até prejudicado algumas infraestruturas de saneamento. Já para 2025, o alto valor obtido certamente indica uma poluição maior desses corpos d’água, porém um dos fatores que pode ter influenciado foi a data da coleta da amostra, que diferentemente dos demais anos, foi coletada no mês de fevereiro.
                       </span>
                     </div>
                     <div>
@@ -635,6 +665,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Seção: Metodologia de Análise */}
         <section id="metodologia" className="bg-gray-50 py-16">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-semibold mb-8">Metodologia de Análise</h2>
@@ -659,6 +690,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Seção: Saneamento na Região */}
         <section id="saneamento" className="py-16">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-semibold mb-8">Saneamento na Região</h2>
@@ -718,13 +750,12 @@ export default function Home() {
                       className="rounded-lg mx-auto h-[300px] object-cover"
                     />
                   </div>
-
                 </CardContent>
               </Card>
             </div>
           </div>
-
         </section>
+
         {/* Seção: Descrição dos Laboratórios */}
         <section id="laboratorios" className="bg-white py-16">
           <div className="container mx-auto px-6">
@@ -761,7 +792,6 @@ export default function Home() {
                     <li className="mb-1">(Titulação): OH<sup>-</sup> (aq.) + H<sup>+</sup> (aq.) → H<sub>2</sub>O (l)</li>
                   </ul>
 
-
                   <h3 className="text-xl font-semibold mt-4 mb-2">Turbidez</h3>
                   <p>
                     Outro importante indicativo da qualidade da água é a turbidez. A turbidez é uma medida que indica o grau de clareza ou limpidez da água.
@@ -784,7 +814,7 @@ export default function Home() {
                     Para calcular a quantidade de sólidos totais, pode-se utilizar a seguinte fórmula:
                   </p>
                   <div className="text-center font-semibold mb-2">
-                    <pre class="text-center font-semibold mb-2 bg-gray-100 p-3 rounded">
+                    <pre className="bg-gray-100 p-3 rounded">
                       ST = (A − B) * 1000 / Vol (mg/L)
                     </pre>
                   </div>
@@ -795,6 +825,11 @@ export default function Home() {
                     Aplicando os valores obtidos na equação conclui-se que a quantidade de sólidos totais na amostra era de 276 mg/L.
                   </p>
 
+                  {/* Carrossel de fotos para Lab 1 */}
+                  <div className="mt-8">
+                    <h4 className="text-xl font-semibold mb-4 text-center">Fotos do Lab 1</h4>
+                    <PhotoCarousel images={lab1Photos} altPrefix="Lab 1 Foto" />
+                  </div>
                 </CardContent>
               </Card>
 
@@ -839,6 +874,11 @@ export default function Home() {
                     Para essa mesma amostra, foram também realizadas as medidas de pH, temperatura da água e temperatura ambiente, a fim de obter dados suficientes para o cálculo do IQA.
                   </p>
 
+                  {/* Carrossel de fotos para Lab 2 */}
+                  <div className="mt-8">
+                    <h4 className="text-xl font-semibold mb-4 text-center">Fotos do Lab 2</h4>
+                    <PhotoCarousel images={lab2Photos} altPrefix="Lab 2 Foto" />
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -1085,7 +1125,7 @@ export default function Home() {
                     href="https://semil.sp.gov.br/2024/08/governo-de-sao-paulo-lanca-nova-etapa-de-obras-de-limpeza-do-rio-tiete/"
                     className="hover:text-blue-400"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener no referrer"
                   >
                     Nova Etapa de Limpeza do Rio Tietê
                   </a>
@@ -1094,7 +1134,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </footer>
+        </footer>
     </div>
-  )
+  );
 }
