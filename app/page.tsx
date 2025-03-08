@@ -850,70 +850,248 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <h3 className="text-xl font-semibold mb-4">Links Úteis</h3>
           <div className="grid md:grid-cols-2 gap-4">
-            <ul className="list-disc list-inside mt-4">
-              <li>
-                <a
-                  href="http://www.tratabrasil.org.br"
-                  className="hover:text-blue-400"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Trata Brasil
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.gov.br/ana/pt-br"
-                  className="hover:text-blue-400"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Agência Nacional de Águas
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.sabesp.com.br/"
-                  className="hover:text-blue-400"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  SABESP
-                </a>
-              </li>
-            </ul>
-            <ul className="list-disc list-inside mt-4">
-              <li>
-                <a
-                  href="https://www.saneamentoambiental.com.br/noticias/projeto-novo-rio-pinheiros-ja-tratou-58-bilhoes-de-litros?utm_source=chatgpt.com"
-                  className="hover:text-blue-400"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Projeto Novo Rio Pinheiros
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.cetesb.sp.gov.br/"
-                  className="hover:text-blue-400"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CETESB - Companhia Ambiental do Estado de São Paulo
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.saopaulo.sp.gov.br/"
-                  className="hover:text-blue-400"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Governo do Estado de São Paulo - Projetos de Saneamento
-                </a>
-              </li>
-            </ul>
+            {/* Grupo: Instituições e Projetos */}
+            <div>
+              <h4 className="text-lg font-bold mb-2">Instituições e Projetos</h4>
+              <ul className="list-disc list-inside mt-4">
+                <li>
+                  <a
+                    href="http://www.tratabrasil.org.br"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Trata Brasil
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.gov.br/ana/pt-br"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Agência Nacional de Águas
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.sabesp.com.br/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    SABESP
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.saneamentoambiental.com.br/noticias/projeto-novo-rio-pinheiros-ja-tratou-58-bilhoes-de-litros?utm_source=chatgpt.com"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Projeto Novo Rio Pinheiros
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.cetesb.sp.gov.br/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    CETESB - Companhia Ambiental do Estado de São Paulo
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.saopaulo.sp.gov.br/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Governo do Estado de São Paulo - Projetos de Saneamento
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Grupo: História e Localização */}
+            <div>
+              <h4 className="text-lg font-bold mb-2">História e Localização do Rio</h4>
+              <ul className="list-disc list-inside mt-4">
+                <li>
+                  <a
+                    href="https://alosaopaulo.com.br/rio-pinheiros-em-fotos-a-historia-do-antigo-jeribatiba/#:~:text=Antes%20chamado%20de%20%E2%80%9CJeribatiba%E2%80%9D%20ou,Paulo%20de%20Piratininga%20(1560)."
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    História do Rio Pinheiros – Alô São Paulo
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.noticiasdaregiao.com.br/exposicao-rios-descobertos-de-frente-para-o-pinheiros-esta-na-ciclovia/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Exposição: Rios Descobertos na Ciclovia
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.turismo-sa.com/dicas/6810/exposicao-rios-descobertos-dos-jerivas-aos-pinheiros"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Exposição: Dos Jerivas aos Pinheiros
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://pt.wikipedia.org/wiki/Rio_Pinheiros"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Wikipedia: Rio Pinheiros
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/groups/220425809035451/posts/1130902941321062/?_rdr"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Facebook: Grupo sobre o Rio Pinheiros
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www1.folha.uol.com.br/cotidiano/2010/08/790384-trechos-limpos-do-tiete-tem-metais-pesados-homem-pode-ser-contaminado.shtml"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Folha: Trechos limpos do Tietê e metais pesados
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.encontrapinheiros.com.br/pinheiros/rio-pinheiros/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Encontra Pinheiros
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://riopinheiros.wordpress.com/onde-passava-o-rio-pinheiros/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Histórico do Curso do Rio Pinheiros
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://blog.brkambiental.com.br/revitalizacao-rio-pinheiros/#:~:text=O%20rio%20Pinheiros%2C%20com%20uma,%C3%A1gua%20mais%20importantes%20do%20munic%C3%ADpio."
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Revitalização do Rio Pinheiros
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Grupo: Qualidade da Água e Parâmetros */}
+            <div className="md:col-span-2">
+              <h4 className="text-lg font-bold mb-2">Qualidade da Água e Parâmetros</h4>
+              <ul className="list-disc list-inside mt-4">
+                <li>
+                  <span>
+                    Qualidade da Água, Descrição: Material fornecido pelo professor
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    Parâmetros do IQA: Material fornecido pelo professor
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    Parâmetros obtidos no estudo: Material fornecido pelo professor
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Grupo: Saneamento na Região */}
+            <div className="md:col-span-2">
+              <h4 className="text-lg font-bold mb-2">Saneamento na Região</h4>
+              <ul className="list-disc list-inside mt-4">
+                <li>
+                  <a
+                    href="https://www.institutodeengenharia.org.br/site/2019/08/07/sobre-a-despoluicao-do-rio-pinheiros/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Despoluição do Rio Pinheiros - Instituto de Engenharia
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://cetesb.sp.gov.br/aguas-interioressp.gov.br/aguas-interiores/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    CETESB - Águas Interiores
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.spaguas.sp.gov.br/site/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    SPA - Águas de São Paulo
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://semil.sp.gov.br/2024/06/novos-investimentos-ampliam-a-revitalizacao-de-rios-e-o-combate-a-enchentes-no-estado-de-sp/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Investimentos na Revitalização de Rios e Combate às Enchentes
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://semil.sp.gov.br/2024/08/governo-de-sao-paulo-lanca-nova-etapa-de-obras-de-limpeza-do-rio-tiete/"
+                    className="hover:text-blue-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Nova Etapa de Limpeza do Rio Tietê
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>
